@@ -21,23 +21,12 @@ url = os.getenv('API_URL')
 
 
 # App title and description
-st.header('Simple Image Uploader 📸')
-st.markdown('''
-            > This is a Le Wagon boilerplate for any data science projects that involve exchanging images between a Python API and a simple web frontend.
+st.header('Detección de defectos en tarjetas PCB')
 
-            > **What's here:**
-
-            > * [Streamlit](https://docs.streamlit.io/) on the frontend
-            > * [FastAPI](https://fastapi.tiangolo.com/) on the backend
-            > * [PIL/pillow](https://pillow.readthedocs.io/en/stable/) and [opencv-python](https://github.com/opencv/opencv-python) for working with images
-            > * Backend and frontend can be deployed with Docker
-            ''')
-
-st.markdown("---")
 
 ### Create a native Streamlit file upload input
-st.markdown("### Let's do a simple face recognition 👇")
-img_file_buffer = st.file_uploader('Upload an image')
+st.markdown("### Primero hay que enviar la foto de la tarjeta")
+img_file_buffer = st.file_uploader('Cargar una imagen')
 
 if img_file_buffer is not None:
 
