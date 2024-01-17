@@ -6,7 +6,7 @@ import os
 
 # Set page tab display
 st.set_page_config(
-   page_title="Simple Image Uploader",
+   page_title="PCB Defect Detection",
    page_icon= '🖼️',
    layout="wide",
    initial_sidebar_state="expanded",
