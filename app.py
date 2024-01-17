@@ -15,10 +15,10 @@ st.set_page_config(
 # Example local Docker container URL
 # url = 'http://api:8000'
 # Example localhost development URL
-#url = 'http://localhost:8000'
+url = 'http://localhost:8000'
 # load_dotenv()
 #url = os.getenv('API_URL')
-url = 'https://docker-test-pcb-cfiqqvqtva-uc.a.run.app'
+#url = 'https://docker-test-pcb-cfiqqvqtva-uc.a.run.app'
 
 
 # App title and description
@@ -49,7 +49,7 @@ if img_file_buffer is not None:
       img_bytes = img_file_buffer.getvalue()
 
       ### Make request to  API (stream=True to stream response as bytes)
-      res = requests.post(url + "/upload_image", files={'img': img_bytes})
+      res = requests.post(url + "/upload_image", files={'img': img_bytes},data={'conf':conf})
 
       if res.status_code == 200:
         ### Display the image returned by the API
