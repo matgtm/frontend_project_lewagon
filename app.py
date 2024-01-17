@@ -15,7 +15,7 @@ st.set_page_config(
 # Example local Docker container URL
 # url = 'http://api:8000'
 # Example localhost development URL
-url = 'http://localhost:8000'
+url = 'localhost:8000'
 # load_dotenv()
 #url = 'https://docker-test-pcb-cfiqqvqtva-uc.a.run.app'
 
