@@ -6,7 +6,7 @@ import os
 
 # Set page tab display
 st.set_page_config(
-   page_title="PCB Defect Detection",
+   page_title="Simple Image Uploader",
    page_icon= '🖼️',
    layout="wide",
    initial_sidebar_state="expanded",
@@ -15,9 +15,8 @@ st.set_page_config(
 # Example local Docker container URL
 # url = 'http://api:8000'
 # Example localhost development URL
-#url = 'http://127.0.0.1:8000'
+#url = 'http://localhost:8000'
 # load_dotenv()
-#url = os.getenv('API_URL')
 url = 'https://docker-test-pcb-cfiqqvqtva-uc.a.run.app'
 
 
@@ -25,14 +24,8 @@ url = 'https://docker-test-pcb-cfiqqvqtva-uc.a.run.app'
 st.header('Detección de defectos en tarjetas PCB')
 
 
-st.subheader('Umbral de confianza')
-
-conf = st.slider('Seleccionar confianza del modelo: ',min_value=0.10,max_value=1.00,step=0.05,value=0.25)
-
-st.write('Los defectos aparecerán cuando el modelo tenga un ',conf*100,'% de seguridad de que sean correctos.')
-
 ### Create a native Streamlit file upload input
-st.markdown("### Cargar la foto de la tarjeta")
+st.markdown("### Primero hay que enviar la foto de la tarjeta")
 img_file_buffer = st.file_uploader('Cargar una imagen')
 
 if img_file_buffer is not None:
