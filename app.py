@@ -143,7 +143,7 @@ with col7:
     st.write(' ')
 
 with col8:
-    image = Image.open('images/wagon.png')
+    image = Image.open('wagon.png')
     st.image(image,caption= 'Powered by', use_column_width=False)
 
 with col9:
