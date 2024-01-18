@@ -1,0 +1,16 @@
+[theme]
+# Base colors
+
+
+primaryColor = "#5C6BC0"  # Deeper blue for a sophisticated feel
+backgroundColor = "#252525"  # Off-white for a clean, airy look
+secondaryBackgroundColor = "#898D94"  # Slightly darker off-white for depth
+textColor = "#F5F7FA"  # Dark gray for readability
+
+
+
+# Font style
+font = "sans serif"  # Modern, clean sans-serif font
+
+# Layout
+base = "dark"
