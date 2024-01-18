@@ -29,34 +29,7 @@ url = 'https://docker-test-pcb-cfiqqvqtva-uw.a.run.app'  #MATIAS con conf thres
 # Define the local CSS file location or the URL to the image
 header_image = "https://lirp.cdn-website.com/a0bf26f7/dms3rep/multi/opt/shutterstock_1588316845-1920w.jpg"
 
-# # Display the header image full-width
-# st.image(header_image, use_column_width=True)
 
-# # Add the title within the header section
-# st.markdown(
-#     f"<h1 style='text-align: center; color: #fff;'>{'Detección de defectos en tarjetas PCB'}</h1>",
-#     unsafe_allow_html=True,
-# )
-
-
-# # Use Markdown to render your header HTML with the styles defined above
-# st.markdown("""
-# <div class="header" style=background-image=url("https://lirp.cdn-website.com/a0bf26f7/dms3rep/multi/opt/shutterstock_1588316845-1920w.jpg")>
-#     <h1>Detección de defectos en tarjetas PCB</h1>
-# </div>
-# """, unsafe_allow_html=True)
-
-
-# header_html = """
-# h1 {
-#     color: red;
-# }
-# .stApp {
-#     background-image: url(https://lirp.cdn-website.com/a0bf26f7/dms3rep/multi/opt/shutterstock_1588316845-1920w.jpg);
-#     background-size: 100% auto;
-#     background: rgba(0, 0, 0, 0.2);
-# }
-# """
 
 header_html = """
 <style>
@@ -118,9 +91,17 @@ with st.container():
 
     st.subheader('Umbral de confianza')
 
-    conf = st.slider('Seleccionar confianza del modelo: ',min_value=0.10,max_value=1.00,step=0.05,value=0.25)
+    col1, col2, col3= st.columns(3)
 
-    st.write('El modelo solo identificará aquellos defectos para los que tenga al menos un ',conf*100,'% de seguridad en sus predicciones.')
+    with col1:
+        conf = st.slider('Seleccionar confianza del modelo: ',min_value=0.10,max_value=1.00,step=0.05,value=0.25)
+        st.write('El modelo solo identificará aquellos defectos para los que tenga al menos un ',conf*100,'% de seguridad en sus predicciones.')
+
+    with col2:
+        st.write(' ')
+    with col3:
+        st.write(' ')
+
 
     ### Create a native Streamlit file upload input
     st.markdown("### Cargar la foto de la tarjeta")
@@ -132,10 +113,10 @@ with st.container():
 
 
         ### Display the image user uploaded
-        st.image(Image.open(img_file_buffer), caption="Here's the image you uploaded ☝️")
+        st.image(Image.open(img_file_buffer), caption="Esta es la imagen cargada ☝️")
 
 
-        with st.spinner("Wait for it..."):
+        with st.spinner("Cargando..."):
             ### Get bytes from the file buffer
             img_bytes = img_file_buffer.getvalue()
 
@@ -144,11 +125,26 @@ with st.container():
 
             if res.status_code == 200:
                 ### Display the image returned by the API
-                st.image(res.content, caption="Imagen devuelta por API ☝️")
+                st.image(res.content, caption="Estos son los defectos en la PCB ☝️")
+                col4, col5, col6= st.columns(3)
+                with col4:
+                    st.write(' ')
+                with col5:
+                    st.success('Exito!')
+                with col6:
+                    st.write(' ')
             else:
                 st.markdown("**Oops**, something went wrong 😓 Please try again.")
                 print(res.status_code, res.content)
 
+col7, col8, col9 = st.columns(3)
 
-st.markdown("<br><br><br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
+with col7:
+    st.write(' ')
 
+with col8:
+    image = Image.open('images/wagon.png')
+    st.image(image,caption= 'Powered by', use_column_width=False)
+
+with col9:
+    st.write(' ')
