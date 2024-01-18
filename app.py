@@ -148,3 +148,7 @@ with st.container():
             else:
                 st.markdown("**Oops**, something went wrong 😓 Please try again.")
                 print(res.status_code, res.content)
+
+
+st.markdown("<br><br><br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
+
