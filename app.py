@@ -16,13 +16,13 @@ st.set_page_config(
 # Example local Docker container URL
 # url = 'http://api:8000'
 # Example localhost development URL
-#url = 'http://127.0.0.1:8000'
+url = 'http://127.0.0.1:8000'
 # load_dotenv()
 #url = os.getenv('API_URL')
 
 ## Selecionar url de google cada uno (Diego, Mateo, Matias)
 #url = 'https://docker-test-pcb-cfiqqvqtva-uc.a.run.app' #MATIAS: Imagen sin conf thres customizable
-url = 'https://docker-test-pcb-cfiqqvqtva-uw.a.run.app'  #MATIAS con conf thres
+#url = 'https://docker-test-pcb-cfiqqvqtva-uw.a.run.app'  #MATIAS con conf thres
 #url = ''   #MATEO
 #url = ''   #DIEGO
 
